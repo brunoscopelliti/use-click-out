@@ -9,6 +9,6 @@
     { "type": "perf", "hidden": true },
     { "type": "test", "hidden": true }
   ],
-  "commitUrlFormat": "https://github.com/brunoscopelliti/template-react-hook/commits/{{hash}}",
-  "compareUrlFormat": "https://github.com/brunoscopelliti/template-react-hook/compare/{{previousTag}}...{{currentTag}}"
+  "commitUrlFormat": "https://github.com/brunoscopelliti/use-click-out/commits/{{hash}}",
+  "compareUrlFormat": "https://github.com/brunoscopelliti/use-click-out/compare/{{previousTag}}...{{currentTag}}"
 }

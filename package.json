@@ -1,5 +1,5 @@
 {
-  "name": "template-react-hook",
+  "name": "use-click-out",
   "version": "0.1.0",
   "description": "A template to create a new React custom hook.",
   "main": "package/dist/index.js",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brunoscopelliti/template-react-hook.git"
+    "url": "git+https://github.com/brunoscopelliti/use-click-out.git"
   },
   "directories": {
     "src": "package/src"
@@ -35,9 +35,9 @@
   "author": "Bruno Scopelliti",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brunoscopelliti/template-react-hook/issues"
+    "url": "https://github.com/brunoscopelliti/use-click-out/issues"
   },
-  "homepage": "https://github.com/brunoscopelliti/template-react-hook#readme",
+  "homepage": "https://github.com/brunoscopelliti/use-click-out#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.13.15",
     "@commitlint/cli": "^12.1.1",
