@@ -1,0 +1,63 @@
+{
+  "name": "template-react-hook",
+  "version": "0.1.0",
+  "description": "A template to create a new React custom hook.",
+  "main": "package/dist/index.js",
+  "module": "package/dist/index.es.js",
+  "types": "package/src/index.d.ts",
+  "scripts": {
+    "badge:coverage": "npm run test:coverage && codecov",
+    "prebuild": "rm -rf ./package/dist",
+    "build": "rollup -c rollup.config.js",
+    "lint": "eslint 'package/**'",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
+    "release": "standard-version",
+    "test": "npm run lint && npm run test:unit",
+    "test:debug": "node --inspect $(npm bin)/jest --watch --no-cache --runInBand",
+    "test:unit": "jest --runInBand --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoscopelliti/template-react-hook.git"
+  },
+  "directories": {
+    "src": "package/src"
+  },
+  "files": [
+    "package/dist",
+    "package/src/index.d.ts",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [],
+  "author": "Bruno Scopelliti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brunoscopelliti/template-react-hook/issues"
+  },
+  "homepage": "https://github.com/brunoscopelliti/template-react-hook#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.15",
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@testing-library/react-hooks": "^5.1.2",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "codecov": "^3.8.1",
+    "eslint": "^7.25.0",
+    "eslint-config-bruno": "^3.0.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "jest": "^26.6.3",
+    "rollup": "^2.45.2",
+    "standard-version": "^9.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
+  }
+}
