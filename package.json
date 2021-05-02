@@ -1,5 +1,5 @@
 {
-  "name": "use-click-out",
+  "name": "@bscop/use-click-out",
   "version": "1.0.0",
   "description": "A template to create a new React custom hook.",
   "main": "package/dist/index.js",
