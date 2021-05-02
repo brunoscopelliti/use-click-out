@@ -1,6 +1,7 @@
 {
   "extends": [
     "bruno",
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended"
   ],
   "rules": {

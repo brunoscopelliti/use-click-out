@@ -1,8 +1,7 @@
-type HookState = {
-  count : number;
-  increment : () => void;
-};
+import React from "react";
 
-declare const useCounter : () => HookState;
+type handler = () => void;
 
-export default useCounter;
+declare const useClickOut : (onClickOut : handler, active : boolean) => React.RefObject;
+
+export default useClickOut;
