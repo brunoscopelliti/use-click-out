@@ -8,7 +8,7 @@ import userEvent from "@testing-library/user-event";
 import useClickOut from "./";
 
 const TestApp =
-  ({ active = false, spy }) => {
+  ({ active, spy }) => {
     const ref = useClickOut(spy, active);
 
     return (
@@ -52,7 +52,7 @@ describe("useClickOut", () => {
     const onClickOut = jest.fn();
 
     const { getByTestId } =
-      render(<TestApp spy={onClickOut} />, { wrapper: Wrapper });
+      render(<TestApp active={false} spy={onClickOut} />, { wrapper: Wrapper });
 
     userEvent.click(getByTestId("logo"));
 
@@ -75,6 +75,17 @@ describe("useClickOut", () => {
 
     const { getByTestId } =
       render(<TestApp active={true} spy={onClickOut} />, { wrapper: Wrapper });
+
+    userEvent.click(getByTestId("logo"));
+
+    expect(onClickOut).toHaveBeenCalledTimes(1);
+  });
+
+  it("executes the handler when user clicks outside the component / active by default", () => {
+    const onClickOut = jest.fn();
+
+    const { getByTestId } =
+      render(<TestApp spy={onClickOut} />, { wrapper: Wrapper });
 
     userEvent.click(getByTestId("logo"));
 

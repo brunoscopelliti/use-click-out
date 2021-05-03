@@ -4,12 +4,12 @@ import { useEffect, useRef } from "react";
  * A custom React hook to fire an event
  * when user clicks outside the component.
  * @name useClickOut
- * @param {Function} onClickOut
+ * @param {Function} handler
  * @param {boolean} active
  * @returns {React.RefObject<HTMLElement>}
  */
 const useClickOut =
-  (onClickOut, active) => {
+  (handler, active = true) => {
     const targetRef = useRef(null);
 
     useEffect(
@@ -17,7 +17,7 @@ const useClickOut =
         const onClick =
           (event) => {
             if (targetRef.current?.contains(event.target) === false) {
-              onClickOut();
+              handler();
             }
           };
 
@@ -31,7 +31,7 @@ const useClickOut =
           }
         };
       },
-      [onClickOut, active]
+      [handler, active]
     );
 
     return targetRef;
