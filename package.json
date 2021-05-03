@@ -31,7 +31,15 @@
     "LICENSE",
     "README.md"
   ],
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react hook",
+    "use-click-out",
+    "click out",
+    "click outside",
+    "hook click out",
+    "hook click outside"
+  ],
   "author": "Bruno Scopelliti",
   "license": "MIT",
   "bugs": {
