@@ -1,7 +1,7 @@
 import React from "react";
 
-type handler = () => void;
+type EventHandler = () => void;
 
-declare const useClickOut : (onClickOut : handler, active : boolean) => React.RefObject;
+declare const useClickOut : <T extends HTMLElement>(handler : EventHandler, active : boolean) => React.RefObject<T>;
 
 export default useClickOut;
