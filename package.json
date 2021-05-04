@@ -1,6 +1,6 @@
 {
   "name": "@bscop/use-click-out",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A custom React hook to fire an event when user clicks outside the component.",
   "main": "package/dist/index.js",
   "module": "package/dist/index.es.js",
