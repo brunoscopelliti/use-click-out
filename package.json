@@ -60,6 +60,7 @@
     "codecov": "^3.8.1",
     "eslint": "^7.25.0",
     "eslint-config-bruno": "^3.0.0",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",

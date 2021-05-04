@@ -1,5 +1,3 @@
-/* eslint-env jest */
-
 import React from "react";
 import PropTypes from "prop-types";
 import { render } from "@testing-library/react";
@@ -63,7 +61,7 @@ describe("useClickOut", () => {
     const onClickOut = jest.fn();
 
     const { getByTestId } =
-      render(<TestApp active={true} spy={onClickOut} />, { wrapper: Wrapper });
+      render(<TestApp active spy={onClickOut} />, { wrapper: Wrapper });
 
     userEvent.click(getByTestId("button-in"));
 
@@ -74,7 +72,7 @@ describe("useClickOut", () => {
     const onClickOut = jest.fn();
 
     const { getByTestId } =
-      render(<TestApp active={true} spy={onClickOut} />, { wrapper: Wrapper });
+      render(<TestApp active spy={onClickOut} />, { wrapper: Wrapper });
 
     userEvent.click(getByTestId("logo"));
 
