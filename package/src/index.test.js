@@ -7,6 +7,9 @@ import useClickOut from "./";
 
 const TestApp =
   ({ active, spy }) => {
+    /**
+     * @type React.RefObject<HTMLDivElement>
+     */
     const ref = useClickOut(spy, active);
 
     return (

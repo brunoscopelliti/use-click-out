@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
  * when user clicks outside the component.
  * @name useClickOut
  * @param {Function} handler
- * @param {boolean} active
+ * @param {boolean} [active]
  * @returns {React.RefObject<HTMLElement>}
  */
 const useClickOut =
