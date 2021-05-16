@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import useClickOut from "./";
@@ -52,10 +52,9 @@ describe("useClickOut", () => {
   it("doesn't executed the handler when hook is not explicitly active", () => {
     const onClickOut = jest.fn();
 
-    const { getByTestId } =
-      render(<TestApp active={false} spy={onClickOut} />, { wrapper: Wrapper });
+    render(<TestApp active={false} spy={onClickOut} />, { wrapper: Wrapper });
 
-    userEvent.click(getByTestId("logo"));
+    userEvent.click(screen.getByTestId("logo"));
 
     expect(onClickOut).not.toHaveBeenCalled();
   });
@@ -63,10 +62,9 @@ describe("useClickOut", () => {
   it("doesn't executed the handler when click happens inside the component", () => {
     const onClickOut = jest.fn();
 
-    const { getByTestId } =
-      render(<TestApp active spy={onClickOut} />, { wrapper: Wrapper });
+    render(<TestApp active spy={onClickOut} />, { wrapper: Wrapper });
 
-    userEvent.click(getByTestId("button-in"));
+    userEvent.click(screen.getByTestId("button-in"));
 
     expect(onClickOut).not.toHaveBeenCalled();
   });
@@ -74,10 +72,9 @@ describe("useClickOut", () => {
   it("executes the handler when user clicks outside the component", () => {
     const onClickOut = jest.fn();
 
-    const { getByTestId } =
-      render(<TestApp active spy={onClickOut} />, { wrapper: Wrapper });
+    render(<TestApp active spy={onClickOut} />, { wrapper: Wrapper });
 
-    userEvent.click(getByTestId("logo"));
+    userEvent.click(screen.getByTestId("logo"));
 
     expect(onClickOut).toHaveBeenCalledTimes(1);
   });
@@ -85,10 +82,9 @@ describe("useClickOut", () => {
   it("executes the handler when user clicks outside the component / active by default", () => {
     const onClickOut = jest.fn();
 
-    const { getByTestId } =
-      render(<TestApp spy={onClickOut} />, { wrapper: Wrapper });
+    render(<TestApp spy={onClickOut} />, { wrapper: Wrapper });
 
-    userEvent.click(getByTestId("logo"));
+    userEvent.click(screen.getByTestId("logo"));
 
     expect(onClickOut).toHaveBeenCalledTimes(1);
   });
