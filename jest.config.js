@@ -18,6 +18,7 @@ module.exports = {
   ],
   setupFiles: [
   ],
+  testEnvironment: "jsdom",
   testMatch: [
     "<rootDir>/**/*.test.js",
   ],
