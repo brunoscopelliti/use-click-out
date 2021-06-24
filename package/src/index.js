@@ -1,16 +1,25 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+
+import useForwardRef from "@bscop/use-forward-ref";
 
 /**
  * A custom React hook to fire an event
  * when user clicks outside the component.
  * @name useClickOut
  * @param {Function} handler
- * @param {boolean} [active]
+ * @param {import("./index").HookOptions|boolean} [activeOrOpts]
  * @returns {React.RefObject<HTMLElement>}
  */
 const useClickOut =
-  (handler, active = true) => {
-    const targetRef = useRef(null);
+  (handler, activeOrOpts) => {
+    const { active = true, ref = null } =
+      typeof activeOrOpts == "boolean"
+        ? {
+            active: activeOrOpts,
+          }
+        : activeOrOpts || {};
+
+    const targetRef = useForwardRef(ref);
 
     useEffect(
       () => {
@@ -31,7 +40,7 @@ const useClickOut =
           }
         };
       },
-      [handler, active]
+      [handler, active, targetRef]
     );
 
     return targetRef;

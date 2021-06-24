@@ -22,8 +22,7 @@ const App = () => {
   const ref = useClickOut(
     () => {
       console.log("Click out of #demo");
-    },
-    true
+    }
   );
 
   return (
@@ -33,6 +32,13 @@ const App = () => {
   );
 };
 ```
+
+`useClickOut` accepts a second optional parameter; it can be:
+
+- a boolean - set to false if the listener should not be active (default is `true`).
+
+- an object, with shape `{ active ?: boolean; ref: React.RefObject<HTMLElement> }` - this is
+  useful in case you already have `ref`.
 
 ## Contribute
 
