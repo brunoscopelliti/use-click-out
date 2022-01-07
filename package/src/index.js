@@ -31,12 +31,12 @@ const useClickOut =
           };
 
         if (active) {
-          document.body.addEventListener("click", onClick);
+          document.body.addEventListener("click", onClick, true);
         }
 
         return () => {
           if (active) {
-            document.body.removeEventListener("click", onClick);
+            document.body.removeEventListener("click", onClick, true);
           }
         };
       },
