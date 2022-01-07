@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/brunoscopelliti/use-click-out/compare/v1.1.0...v1.1.1) (2022-01-07)
+
+
+### Bug Fixes
+
+* register event for the capture phase ([fb9c5db](https://github.com/brunoscopelliti/use-click-out/commits/fb9c5db783976fbf876e0b900abe5098b765abc4))
+
 ## [1.1.0](https://github.com/brunoscopelliti/use-click-out/compare/v1.0.6...v1.1.0) (2021-06-24)
 
 
