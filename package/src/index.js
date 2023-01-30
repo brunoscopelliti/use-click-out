@@ -26,7 +26,7 @@ const useClickOut =
         const onClick =
           (event) => {
             if (targetRef.current?.contains(event.target) === false) {
-              handler();
+              handler(event);
             }
           };
 
