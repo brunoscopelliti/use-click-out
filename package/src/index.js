@@ -2,6 +2,13 @@ import { useEffect } from "react";
 
 import useForwardRef from "@bscop/use-forward-ref";
 
+const isTouchCapable = Boolean(
+  "ontouchstart" in window ||
+  // @ts-ignore
+  ("DocumentTouch" in window && document instanceof window.DocumentTouch) ||
+  window.navigator.maxTouchPoints > 0
+);
+
 /**
  * A custom React hook to fire an event
  * when user clicks outside the component.
@@ -12,7 +19,7 @@ import useForwardRef from "@bscop/use-forward-ref";
  */
 const useClickOut =
   (handler, activeOrOpts) => {
-    const { active = true, ref = null } =
+    const { active = true, ref = null, touch = false } =
       typeof activeOrOpts == "boolean"
         ? {
             active: activeOrOpts,
@@ -32,15 +39,21 @@ const useClickOut =
 
         if (active) {
           document.body.addEventListener("click", onClick, true);
+          if (touch && isTouchCapable) {
+            document.body.addEventListener("touchstart", onClick, true);
+          }
         }
 
         return () => {
           if (active) {
             document.body.removeEventListener("click", onClick, true);
+            if (touch && isTouchCapable) {
+              document.body.removeEventListener("touchstart", onClick, true);
+            }
           }
         };
       },
-      [handler, active, targetRef]
+      [handler, active, touch, targetRef]
     );
 
     return targetRef;

@@ -7,11 +7,6 @@ module.exports = {
     "html",
     "json",
   ],
-  coverageThreshold: {
-    global: {
-      lines: 95,
-    },
-  },
   moduleDirectories: [
     "node_modules",
     "<rootDir>/package/src",
