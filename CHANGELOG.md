@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/brunoscopelliti/use-click-out/compare/v1.3.0...v1.3.1) (2023-04-29)
+
+
+### Bug Fixes
+
+* make check lazy to avoid problem on nextjs when rendering on server ([83aab41](https://github.com/brunoscopelliti/use-click-out/commits/83aab417d19a5312cf97a1811203fa11499f1777))
+
 ## [1.3.0](https://github.com/brunoscopelliti/use-click-out/compare/v1.2.0...v1.3.0) (2023-04-29)
 
 
