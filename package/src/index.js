@@ -2,12 +2,14 @@ import { useEffect } from "react";
 
 import useForwardRef from "@bscop/use-forward-ref";
 
-const isTouchCapable = Boolean(
-  "ontouchstart" in window ||
-  // @ts-ignore
-  ("DocumentTouch" in window && document instanceof window.DocumentTouch) ||
-  window.navigator.maxTouchPoints > 0
-);
+const isTouchCapable = () => {
+  return Boolean(
+    "ontouchstart" in window ||
+    // @ts-ignore
+    ("DocumentTouch" in window && document instanceof window.DocumentTouch) ||
+    window.navigator.maxTouchPoints > 0
+  );
+};
 
 /**
  * A custom React hook to fire an event
@@ -39,7 +41,7 @@ const useClickOut =
 
         if (active) {
           document.body.addEventListener("click", onClick, true);
-          if (touch && isTouchCapable) {
+          if (touch && isTouchCapable()) {
             document.body.addEventListener("touchstart", onClick, true);
           }
         }
@@ -47,7 +49,7 @@ const useClickOut =
         return () => {
           if (active) {
             document.body.removeEventListener("click", onClick, true);
-            if (touch && isTouchCapable) {
+            if (touch && isTouchCapable()) {
               document.body.removeEventListener("touchstart", onClick, true);
             }
           }
