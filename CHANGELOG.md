@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/brunoscopelliti/use-click-out/compare/v1.2.0...v1.3.0) (2023-04-29)
+
+
+### Features
+
+* add support for touch event ([bf439a4](https://github.com/brunoscopelliti/use-click-out/commits/bf439a4ff39f3a0ad1b3c9ee910f2bc255e299c8))
+
 ## [1.2.0](https://github.com/brunoscopelliti/use-click-out/compare/v1.1.1...v1.2.0) (2023-01-30)
 
 
